@@ -1,0 +1,55 @@
++++
+# Date this page was created.
+date = "2016-04-27"
+
+# Project title.
+title = "An Analysis of Homicides in the US from 1976 - 2015"
+
+# Project summary to display on homepage.
+summary = "By aggressively using the Freedom of Information Act, SHNS reporter Tom Hargrove constructed a database of over 525,000 homicides from the past 30 years. He found that nearly 185,000 of these killings remain unsolved, and that success of police departments vary wildly across the country. Can his analysis be improved using machine learning?"
+
+# Optional image to display on homepage (relative to `static/img/` folder).
+image_preview = "SerialKiller.jpg"
+
+# Tags: can be used for filtering projects.
+# Example: `tags = ["machine-learning", "deep-learning"]`
+tags = ["datascience"]
+
+# Optional external URL for project (replaces project detail page).
+#external_link = "http://www.murderdata.org/p/who-we-are.html"
+
+# Does the project detail page use math formatting?
+math = true
+
+# Optional featured image (relative to `static/img/` folder).
+[header]
+image = "headers/SerialTrend.jpg"
+caption = "A time-series of solved and unsolved murders in a 5 year period."
+
++++
+Inspired by Tom Hargrove's initial work using SAS and SQL to explore unsolved homicides across the US, I decided to explore the same data using newer machine learning techniques.
+
+Using a Lasso-Regularized Generalized Linear Model in R, I find that I can predict with $80$% accuracy the homicide cases after 2010 that will be solved and those that will not. The statistically significant variables in this model are:
+
+Circumstance, Weapon Used, State, Victim's Sex, Victim's Ethnicity, Victim's Age, Number of Victims, and Date of Murder
+
+These are unsettling findings, but they should be understood in the context of the model. The fact that these are correlated to the rate of solved/unsolved cases does not mean they cause it. It is possible
+that a particular ethnicity is more likely to become the victim of a certain type of crime (as is true with hate crimes), which may be easier or harder to solve than other murders. 
+
+Using a time-series of murders between 2002 and 2015, I find significant seasonal dependences on the crime rate. Significantly more murders than average are committed in summer ($p < 0.0003$), and significantly fewer are committed in the winter ($p < 0.002$). This linear time-series model had an Adjusted $R^2 = 0.69$.
+
+Next, I used a generalized linear model (unregularized) to predict the odds of the murderer not knowing the victim. At $75$% accuracy, and all other factors being equal, my results suggest:
+
+The use of poison or drugs in a murder decreases the log-odds of the murderer being a stranger by $2.12$
+
+The use of a gun increases the log-odds of the murderer being a stranger by $0.70$
+
+An increase of 1 year in age of the victim decreases the log-odds of the murderer being a stranger by $0.005$.
+
+An increase of every year in the year the crime was committed decreases the log-odds of the murderer being a stranger by $0.026$. This is particularly suspicious, and may indicate one of two things. Either the proportion of murders between strangers has been steadily decreasing since 1975, or the way that they're being reported has changed.
+
+We can use this same model to predict the probability of the stranger being a murderer for particular cases. A few of the findings from this procedure are as followed:
+
+If a 25 year old male is shot and killed in 2000, and it goes unsolved, the model predicts that the probability is $30$% higher that the murderer was a stranger than if the victim were female. If a 50 year old woman is drugged/poisoned in 2000, and the case is solved, there's a $99$% chance a family member did it. If a 25 year old woman is killed in 2000, and she was shot, the probability is $10$x higher that it was a stranger than if she was poisoned. 
+
+I will continue this work to predict the killer's relationship to the victim in particular cases.

@@ -3,9 +3,9 @@
 widget = "experience"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 40  # Order that this section will appear.
+weight = 50  # Order that this section will appear.
 
-title = "Experience"
+title = "Internships"
 subtitle = ""
 
 # Date format for experience
@@ -18,27 +18,49 @@ date_format = "Jan 2006"
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 [[experience]]
-  title = "CEO"
-  company = "GenCoin"
+  title = "Postbac Fellow"
+  company = "Los Alamos National Laboratory"
   company_url = ""
-  location = "California"
-  date_start = "2017-01-01"
-  date_end = ""
+  location = "Los Alamos, New Mexico"
+  date_start = "2017-06-05"
+  date_end = "2018-08-01"
   description = """
-  Responsibilities include:
-  
-  * Analysing
-  * Modelling
-  * Deploying
+  * Integrated AMR and particle-based cosmology simulations with 26-species chemical reaction network in C, F90
+  * Writing a paper on results as first author and presented at two conferences
   """
 
 [[experience]]
-  title = "Professor"
-  company = "University X"
+  title = "Software Intern"
+  company = "Virginia Biocomplexity Institute"
   company_url = ""
-  location = "California"
-  date_start = "2016-01-01"
-  date_end = "2016-12-31"
-  description = """Taught electronic engineering and researched semiconductor physics."""
+  location = "Blacksburg, Virginia"
+  date_start = "2017-05-01"
+  date_end = "2017-01-01"
+  description = """
+  * Invented an educational game using HTML5, Javascript, Construct2 for elementary school biology program of ~300 students.
+  * Scraped web pages for epidemiology simulation data."""
+
+[[experience]]
+  title = "Undergraduate Researcher"
+  company = "Cerro-Tololo Inter-American Obervatory"
+  company_url = ""
+  location = "La Serena, Chile"
+  date_start = "2015-03-18"
+  date_end = "2015-01-10"
+  description = """
+  * Generated catalogue of 22,676 globular clusters from HST/ACS data using PyRAF
+  * Analyzed clusters by creating radial density maps, Color Magnitude Diagrams in Python (see publications)"""
+
+[[experience]]
+  title = "High School Intern"
+  company = "NASA Goddard Space Flight Center"
+  company_url = ""
+  location = "Greenbelt, Maryland"
+  date_start = "2013-06-15"
+  date_end = "2011-08-15"
+  description = """
+  * Quantified exoplanet detection likelihoods as a function of impact parameter and mass ratios
+  * Implemented a Markov Chain in IDL for parameter space sampling."""
+
 
 +++

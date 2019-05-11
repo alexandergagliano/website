@@ -1,0 +1,49 @@
++++
+# Date this page was created.
+date = "2016-04-27"
+
+# Project title.
+title = "The Impact of Autonomous Vehicles on Washington State Traffic Flows"
+
+# Project summary to display on homepage.
+summary = "This report investigates the effect of increasing driverless cars on a closed segment of highway with a sophisticated simulation that includes various speeds, lane changes, levels of traffic, and other realistic characteristics of roadway flow."
+
+# Optional image to display on homepage (relative to `static/img/` folder).
+image_preview = "headers/RoadDecisions.jpg"
+
+# Tags: can be used for filtering projects.
+# Example: `tags = ["machine-learning", "deep-learning"]`
+tags = ["machine-learning", "datascience"]
+
+# Optional external URL for project (replaces project detail page).
+external_link = ""
+
+# Does the project detail page use math formatting?
+math = false
+
+# Optional featured image (relative to `static/img/` folder).
+[header]
+image = "featured.PNG"
+caption = "Predicted highway throughput as a function of the percentage of autonomous vehicles on the road."
+
++++
+With the number of different private companies racing to develop autonomous vehicle technology,
+largely in secret, the exact implementation and implications of this software is unknown. It is therefore
+crucial to identify abilities and behaviors shared by all types of autonomous vehicles, which will reduce
+travel times and danger to the users. With the potential for communication between other autonomous
+vehicles, these cars will be able to mimic travel patterns of different species of animal, such as a school
+of fish. The behaviors that allow animals to travel efficiently in groups, which can also be developed
+in autonomous vehicles, are defined by Boid's model of animal flocking:
+
+- Cohesion: An object moves toward the center of mass of similar neighbors.
+- Separation: An object moves away from other flocks in order to prevent collision.
+- Alignment: An object adjusts its orientation according to the orientation of the flock.
+
+Our model solution implements methods that mimic these 3 vital behaviors.1
+Our models find that, with section 10 as an exception, every section of road has its highest throughput at either 0% or 20% autonomous vehicles. At first,
+this may seem paradoxical. It is important to recognize, however, that autonomous vehicles were created under the condition that none could attain a speed higher than the speed limit of 60 mph. On the other
+hand, the speeds of human-operated vehicles can range from 40 mph to 80mph, with only a mean of 60 mph. This means that any cars moving greater than 60 mph will be slowed down by a bot moving in front
+of them. The greater the number of bots on the road, the greater the likelihood that a car moving faster than the speed limit will be slowed down, decreasing the throughput.
+
+image = "Throughput.jpg"
+caption = "Predicted highway throughput as a function of the percentage of autonomous vehicles on the road."
