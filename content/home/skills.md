@@ -27,9 +27,9 @@ subtitle = ""
   #description = "100%"  
   
 [[feature]]
-  icon = "compass"
+  icon = "terminal"
   icon_pack = "fas"
-  name = "Travel"
+  name = "Unix/Linux"
   #description = "10%"
 
 +++
